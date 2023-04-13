@@ -1,0 +1,45 @@
+@import "../../assets/colors.scss";
+
+.radio-selector {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e3;
+    cursor: pointer;
+
+    &__indicator {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: 1px solid $color-main;
+        border-radius: 50%;
+
+        &__inside-dot {
+            width: 12px;
+            height: 12px;
+            background-color: $color-main;
+            border-radius: 50%;
+            display: none;
+        }
+
+        &.selected {
+            border-width: 2px;
+
+            & .radio-btn__indicator__inside-dot {
+                display: block;
+            }
+        }
+    }
+}
