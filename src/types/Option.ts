@@ -1,4 +1,6 @@
 export interface Option {
-    tag: any;
+    uid: any;
     name: string;
+    hint?: string;
+    disabled?: boolean;
 }

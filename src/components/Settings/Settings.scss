@@ -1,3 +1,5 @@
+@import "../../assets/colors.scss";
+
 .settings {
     width: 100%;
     height: fit-content;
@@ -11,16 +13,12 @@
 header {
     width: 100%;
     height: fit-content;
-    padding-left: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     background: #f9f9fc;
     color: black;
     font-size: 30px;
     font-weight: 600;
     line-height: 37px;
-
-    // TEMP
-    padding-top: 75px;
 }
 
 .section {
@@ -51,8 +49,35 @@ header {
         flex-direction: column;
         gap: 20px;
     }
+
+    &__fields {
+        width: 100%;
+        max-width: 370px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .text-muted {
     color: #686869;
+}
+
+.btn-save {
+    width: 100%;
+    height: fit-content;
+    padding: 13px 20px;
+    background-color: $color-main;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+
+    &__wrapper {
+        width: 100%;
+        height: fit-content;
+        padding-top: 20px;
+        border-top: 1px solid #e1e1e3;
+    }
 }

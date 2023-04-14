@@ -1,8 +1,8 @@
 @import '../../assets/colors.scss';
 
 .input-field {
+    width: 100%;
     display: flex;
-    margin-bottom: 20px;
 
     &__label {
         width: 120px;
@@ -13,12 +13,16 @@
     }
 
     &__content {
-
+        width: 100%;
+        max-width: fit-content;
+        margin-left: auto;
     }
 
     &__input {
         width: 100%;
+        max-width: 270px;
         height: 34px;
+        margin-left: auto;
         padding: 0 12px;
         appearance: none;
         background: #fff;
@@ -33,6 +37,30 @@
 
         &:focus {
             border-color: $color-main;
+        }
+    }
+
+    &__placeholder {
+        width: fit-content;
+        min-width: 60%;
+        height: 100%;
+        margin-left: auto;
+        padding: 4px 8px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    &__btn-edit {
+        width: auto;
+        height: 100%;
+        cursor: pointer;
+
+        img {
+            width: auto;
+            height: 22px;
         }
     }
 }

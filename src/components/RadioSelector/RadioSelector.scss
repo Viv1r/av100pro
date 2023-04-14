@@ -1,7 +1,8 @@
 @import "../../assets/colors.scss";
 
 .radio-selector {
-    width: 100%;
+    width: fit-content;
+    min-width: 370px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -10,13 +11,24 @@
 .radio-btn {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding-bottom: 15px;
+    padding: 0 0 15px 30px;
     margin-bottom: 15px;
     border-bottom: 1px solid #e1e1e3;
     cursor: pointer;
 
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    &__name {
+        width: auto;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
     &__indicator {
+        position: absolute;
+        left: 0;
         width: 20px;
         height: 20px;
         display: flex;
@@ -27,6 +39,7 @@
         border-radius: 50%;
 
         &__inside-dot {
+            position: relative;
             width: 12px;
             height: 12px;
             background-color: $color-main;
@@ -40,6 +53,25 @@
             & .radio-btn__indicator__inside-dot {
                 display: block;
             }
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+    }
+
+    &.disabled &__indicator {
+        border-color: #777;
+    }
+
+    &__hint {
+        margin-left: auto;
+        cursor: help;
+
+        img {
+            width: 24px;
+            height: 24px;
+            opacity: 40%;
         }
     }
 }

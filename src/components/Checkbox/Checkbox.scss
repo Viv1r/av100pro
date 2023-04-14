@@ -1,0 +1,45 @@
+@import "../../assets/colors.scss";
+
+.checkbox-input {
+    display: flex;
+    width: fit-content;
+    min-width: 370px;
+
+    &__label {
+        width: 80%;
+        font-size: 12px;
+        padding-left: 24px;
+        cursor: pointer;
+        user-select: none;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $color-main;
+            color: white;
+            border-radius: 2px;
+            left: 0;
+        }
+
+        &.checked:before {
+            content: '✓';
+            background-color: $color-main;
+        }
+    }
+
+    &__hint {
+        margin-left: auto;
+        cursor: help;
+
+        img {
+            width: 24px;
+            height: 24px;
+            opacity: 40%;
+        }
+    }
+}
