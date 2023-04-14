@@ -48,6 +48,13 @@ header {
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        &__title {
+            font-size: 15px;
+            font-weight: bold;
+            user-select: none;
+            cursor: pointer;
+        }
     }
 
     &__fields {

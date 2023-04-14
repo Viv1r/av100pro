@@ -51,6 +51,7 @@
           Выберите, куда будут приходить уведомления при появлении автомобилей,
           которые подходят под критерии вашей подборки.
         </p>
+        <div class="section__body__title">Уведомления</div>
         <RadioSelector :options="sendMethod" v-model="settings.sendMethod">
           <template #2>
             <InputField v-model="settings.email"/>
@@ -82,10 +83,10 @@
         <DropdownList :options="timezone" v-model="settings.timezone">
           <template #label>Часовой пояс</template>
         </DropdownList>
-        <Checkbox v-model="settings.locklenta" hint="Лента будет автоматически обновляться 1 раз в 3 секунды">
+        <Checkbox v-model="settings.locklentaupdate" hint="Лента будет автоматически обновляться 1 раз в 3 секунды">
           <template #label>Автоматически переходить к новым объявлениям</template>
         </Checkbox>
-        <Checkbox v-model="settings.lentacolor" hint="Включение зеленого/желтого цвета">
+        <Checkbox v-model="settings.colorlenta" hint="Включение зеленого/желтого цвета">
           <template #label>Включить цвета в ленте</template>
         </Checkbox>
       </div>

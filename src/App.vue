@@ -13,10 +13,11 @@ export default {
     Settings
   },
   methods: {
-    ...mapActions(['loadSettings'])
+    ...mapActions(['loadSettings', 'login'])
   },
-  mounted() {
-    this.loadSettings();
+  async mounted() {
+    await this.login();
+    await this.loadSettings();
   }
 }
 </script>

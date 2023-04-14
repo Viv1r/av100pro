@@ -10,24 +10,8 @@ export class Settings {
     sendMethod?: number;
     redirecttarget?: number;
     timezone?: number;
-    private locklentaupdate?: boolean;
-    private colorlenta?: boolean;
-
-    get locklenta() {
-        return !!this.locklentaupdate;
-    }
-
-    set locklenta(newval: any) {
-        this.locklentaupdate = !!newval;
-    }
-
-    get lentacolor() {
-        return !!this.colorlenta;
-    }
-
-    set lentacolor(newval: any) {
-        this.colorlenta = !!newval;
-    }
+    locklentaupdate?: boolean;
+    colorlenta?: boolean;
 
     // Выгрузка из новых настроек только необходимых полей
     setup(newSettings: any): void {
@@ -42,7 +26,7 @@ export class Settings {
         this.sendMethod = Number(newSettings.sendMethod);
         this.redirecttarget = Number(newSettings.redirecttarget);
         this.timezone = Number(newSettings.timezone);
-        this.locklenta = newSettings.locklentaupdate;
-        this.lentacolor = newSettings.colorlenta;
+        this.locklentaupdate = !!newSettings.locklentaupdate;
+        this.colorlenta = !!newSettings.colorlenta;
     }
 }

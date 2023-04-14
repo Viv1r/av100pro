@@ -6,6 +6,15 @@ import vue2 from '@vitejs/plugin-vue2'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      "^/api": {
+        target: "https://api.av100.ru/v3/",
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/g, '')
+      }
+    },
+  },
   plugins: [
     vue2(),
     legacy({

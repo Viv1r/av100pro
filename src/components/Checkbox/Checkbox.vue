@@ -14,13 +14,13 @@
 <script>
 export default {
     props: {
-        value: Boolean | Number,
+        value: Boolean,
         hint: String
     },
     methods: {
         toggle() {
             this.value = !this.value;
-            this.$emit('input', Number(this.value));
+            this.$emit('input', !!this.value);
         }
     },
     emits: ['input']
